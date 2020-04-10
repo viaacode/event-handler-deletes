@@ -1,0 +1,25 @@
+version: '3'
+services:
+  app:
+    container_name: event-handler-deletes_app
+    image: event-handler-deletes/app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./:/usr/src/app"
+    mem_limit: 256m
+    depnds_on:
+      - rabbitmq
+  rabbitmq:
+    container_name: event-handler-deletes_rabbitmq
+    image: event-handler-deletes/rabbitmq
+    build:
+      context: ./Docker
+      dockerfile: Dockerfile.rabbitmq
+    ports:
+    - "5672:5672"
+    - "15672:15672"
+    mem_limit: 256m
