@@ -78,9 +78,6 @@ pipeline {
     }
     post {
         always {
-            script {
-               slackNotifier(currentBuild.currentResult)
-            }
             sh 'make -f ./openshift/Makefile post-clean'
             cleanWs()
         }
