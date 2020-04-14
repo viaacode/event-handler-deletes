@@ -1,0 +1,9 @@
+viaa:
+    logging:
+        level: 30
+    environment:
+        rabbit:
+            host: localhost
+            queue: deletes
+            username: guest
+            password: guest

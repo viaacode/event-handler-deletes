@@ -10,6 +10,7 @@ APP_NAME = event-handler-deletes
 IMAGE_NAME = ${NAMESPACE}/${APP_NAME}
 REGISTRY = docker-registry-default.apps.do-prd-okp-m0.do.viaa.be
 build:
+	cp ./config.yml.example ./config.yml
 	docker build -t "${REGISTRY}/${IMAGE_NAME}:${VERSION}" .
 test:
 	docker container run --name "${APP_NAME}_test" \
