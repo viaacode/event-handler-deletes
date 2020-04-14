@@ -60,8 +60,9 @@ pipeline {
             }
         }
         stage('Approve') {
+            input message: "Do you want to approve the deploy in production?", id: "approval"
             steps {
-                sh 'make -f ./openshift/Makefile approve'
+                sh 'make -f ./openshift/Makefile approved'
             }
         }
         stage('Tag PRD') {
@@ -80,7 +81,7 @@ pipeline {
             script {
                slackNotifier(currentBuild.currentResult)
             }
-            sh 'make post-clean'
+            sh 'make -f ./openshift/Makefile post-clean'
             cleanWs()
         }
     }

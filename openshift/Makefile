@@ -1,5 +1,4 @@
-# TODO: git describe and fall back to latest
-VERSION = ${shell (echo latest)}
+VERSION = ${shell (git describe --tags || echo latest)}
 
 .ONESHELL:
 SHELL = /bin/bash
@@ -38,7 +37,8 @@ tag-prd:
 	oc tag ${IMAGE_NAME}:${VERSION} ${IMAGE_NAME}:prd
 deploy-prd:
 
-approve:
+approved:
+	echo "Approved"
 
 post-clean:
 	docker container rm "${APP_NAME}_test"
