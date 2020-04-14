@@ -60,8 +60,8 @@ pipeline {
             }
         }
         stage('Approve') {
-            input message: "Do you want to approve the deploy in production?", id: "approval"
             steps {
+                input message: "Do you want to approve the deploy in production?", id: "approval"
                 sh 'make -f ./openshift/Makefile approved'
             }
         }
