@@ -25,7 +25,8 @@ lint:
 					--exit-zero \
 					--max-line-length=88
 push:
-	login_oc.sh https://do-prd-okp-m0.do.viaa.be:8443 && change-oc-project
+	login_oc.sh https://do-prd-okp-m0.do.viaa.be:8443
+	change-oc-project
 	docker push ${REGISTRY}/${IMAGE_NAME}:${VERSION}
 
 tag-int:
