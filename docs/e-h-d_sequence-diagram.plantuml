@@ -1,0 +1,18 @@
+@startuml event-handler-deletes
+
+MediaHaven -> "event-handler-deletes": Webhook event
+activate "event-handler-deletes"
+alt Valid event(s)
+
+  loop for each premis_event
+ 
+  "event-handler-deletes" -> RabbitMQ: (Un)delete event JSON
+
+  "event-handler-deletes" -> MediaHaven: 200 - "OK"
+  end
+else Invalid event(s)
+  "event-handler-deletes" --> MediaHaven: 400 - "NOK"
+deactivate "event-handler-deletes"
+end
+
+@enduml
