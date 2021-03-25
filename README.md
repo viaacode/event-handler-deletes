@@ -13,6 +13,10 @@ Handles incoming webhooks from Mediahaven. It transforms the incoming event and 
   platforms.)
 - Access to the [meemoo PyPi](http://do-prd-mvn-01.do.viaa.be:8081)
 
+## Diagrams
+
+![Event handler: Deletes](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/viaacode/event-handler-deletes/development/docs/e-h-d_sequence-diagram.plantuml&fmt=svg)
+
 ## Usage
 
 1. Clone this repository with:
