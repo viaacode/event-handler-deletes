@@ -3,5 +3,5 @@ requests==2.23.0
 flask==1.1.1
 flask-api==2.0
 viaa-chassis==0.1.3
-lxml==4.5.0
+lxml==4.6.5
 uWSGI==2.0.18
