@@ -1,5 +1,5 @@
 pika==1.1.0
-requests==2.23.0
+requests==2.31.0
 flask==1.1.1
 flask-api==2.0
 viaa-chassis==0.1.3
